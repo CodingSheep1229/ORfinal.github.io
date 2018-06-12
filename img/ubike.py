@@ -183,8 +183,6 @@ file.close()
 cmd = "r < map2.r --save "
 os.system(cmd)
 
-print("DONE")
-
 # cmd = "open result.png"
 # os.system(cmd)
 
@@ -194,6 +192,9 @@ print("DONE")
 # cmd = "open result" + now
 # os.system(cmd)
 
-os.system('git add *')
+os.system('cd ..')
+os.system('git add img/*')
 os.system('git commit -m "hi"')
 os.system('git push origin master')
+
+print("DONE")
