@@ -12,7 +12,7 @@ library(readxl)
 
 options(encoding="UTF-8")
 Sys.setlocale(category = "LC_ALL", locale = "zh_TW.UTF-8")
-close_site = read_excel("/Users/hanjitsai/Documents/or/ampl/project/all.xlsx")
+close_site = read_excel("all.xlsx")
 close_site = colnames(close_site)
 
 ##Part1. Crawl the json file from the website offered by taipei city gov

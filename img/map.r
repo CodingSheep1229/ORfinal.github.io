@@ -12,9 +12,9 @@ library(readxl)
 
 options(encoding="UTF-8")
 Sys.setlocale(category = "LC_ALL", locale = "zh_TW.UTF-8")
-close_site = read_excel("/Users/hanjitsai/Documents/or/ampl/project/all.xlsx")
+close_site = read_excel("all.xlsx")
 close_site = colnames(close_site)
-result = read_excel("/Users/hanjitsai/Documents/or/ampl/project/result.xlsx")
+result = read_excel("result.xlsx")
 
 ##Part1. Crawl the json file from the website offered by taipei city gov
 url = "http://data.taipei/youbike"
@@ -87,7 +87,7 @@ q = q + geom_text(data=dff, mapping=aes(x=lng, y=lat, label = num), size=2, vjus
 q = q + geom_path(aes(x = lng, y = lat,colour = "red"), data = res)
 q = q + geom_text(data=dff, mapping=aes(x=lng, y=lat, label= sbi), size=2, vjust=1.5, hjust=1.5)
 print(q)
-ggsave(filename="/Users/hanjitsai/Documents/or/ampl/project/result.png")
+ggsave(filename="result.png")
 
 
 

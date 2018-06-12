@@ -13,9 +13,9 @@ library(readxl)
 
 options(encoding="UTF-8")
 Sys.setlocale(category = "LC_ALL", locale = "zh_TW.UTF-8")
-close_site = read_excel("/Users/hanjitsai/Documents/or/ampl/project/dis.xlsx")
+close_site = read_excel("dis.xlsx")
 close_site = colnames(close_site)
-result = read_excel("/Users/hanjitsai/Documents/or/ampl/project/result.xlsx")
+result = read_excel("result.xlsx")
 
 ##Part1. Crawl the json file from the website offered by taipei city gov
 
@@ -78,9 +78,9 @@ q = ggmap(map)
 q = q + geom_point(data=dff, aes(lng, lat, colour="blue"), size = 4)
 q = q + theme(legend.position="none") 
 q = q + geom_text(data=dff, mapping=aes(x=lng, y=lat, label= sbi), size=3, vjust=0.5, hjust=0.5)
-ggsave(filename="/Users/hanjitsai/Documents/or/ampl/project/original.png")
+ggsave(filename="original.png")
 #q = q + geom_text(data=dff, mapping=aes(x=lng, y=lat, label = num), size=3, vjust=0.5, hjust=0.5)
 q = q + geom_path(aes(x = lng, y = lat,colour = "red"), data = res , arrow = arrow(type = "open", angle = 30, length = unit(0.1, "inches")))
 q = q + geom_text(data=alloc, mapping=aes(x=lng, y=lat, label= num), size=4, vjust=0.5, hjust=0.5,angle = 45,colour = rainbow(7)[6])
 print(q)
-ggsave(filename="/Users/hanjitsai/Documents/or/ampl/project/result.png")
+ggsave(filename="result.png")
