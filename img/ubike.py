@@ -192,8 +192,8 @@ os.system(cmd)
 # cmd = "open result" + now
 # os.system(cmd)
 
-os.system('cd ..')
-os.system('git add img/*')
+# os.system('cd ..')
+os.system('git add *')
 os.system('git commit -m "hi"')
 os.system('git push origin master')
 
