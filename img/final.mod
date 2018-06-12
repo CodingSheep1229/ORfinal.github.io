@@ -35,11 +35,11 @@ subject to Connected_route4{i in 1..N, s in 1..S}:
 subject to Travel_a_place_each_time{s in 1..S}:
     sum{i in 1..N} sum{j in 1..N} K[i,j,s] <= 1;
 
-subject to Allowed_to_be_imported{i in 1..N, j in 1..N, s in 1..S}:
-    In[j] * Total_cap[i] >= Load[i,j,s];
+# subject to Allowed_to_be_imported{i in 1..N, j in 1..N, s in 1..S}:
+#     In[j] * Total_cap[i] >= Load[i,j,s];
 
-subject to Allowed_to_be_exported{i in 1..N, j in 1..N, s in 1..S}:
-    Out[i] * Total_cap[i] >= Load[i,j,s];
+# subject to Allowed_to_be_exported{i in 1..N, j in 1..N, s in 1..S}:
+#     Out[i] * Total_cap[i] >= Load[i,j,s];
 
 subject to Truck_cap{i in 1..N, j in 1..N, s in 1..S}:
     Load[i,j,s] <= P;
